@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b768edd4e3df48e7aabbcc6540cfc518 }}/1vkata/cap-project:${{ github.sha }}
+        tags: index.docker.io/1vkata/cap-project:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'cap-project'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_c0eda37371c2487c825c27dffe2ae3cc }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b768edd4e3df48e7aabbcc6540cfc518 }}/1vkata/cap-project:${{ github.sha }}'
+        images: 'index.docker.io/1vkata/cap-project:${{ github.sha }}'
